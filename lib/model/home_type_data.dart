@@ -1,13 +1,13 @@
 class HomeTypeList {
   static const _homeType1 = <HomeType>[
     HomeType(typeImg: 'images/type1.png', typeName: '二手车'),
-    HomeType(typeImg: 'images/type2.png', typeName: '严选车'),
-    HomeType(typeImg: 'images/type3.png', typeName: '全国购'),
-    HomeType(typeImg: 'images/type4.png', typeName: '新车'),
-    HomeType(typeImg: 'images/type5.png', typeName: '限时秒抢'),
-    HomeType(typeImg: 'images/type6.png', typeName: '免费卖车'),
     HomeType(typeImg: 'images/type7.png', typeName: '快速卖车'),
     HomeType(typeImg: 'images/type8.png', typeName: '估价'),
+    HomeType(typeImg: 'images/type4.png', typeName: '新车'),
+    HomeType(typeImg: 'images/type5.png', typeName: '限时秒抢'),
+    HomeType(typeImg: 'images/type2.png', typeName: '严选车'),
+    HomeType(typeImg: 'images/type6.png', typeName: '免费卖车'),
+    HomeType(typeImg: 'images/type3.png', typeName: '全国购'),
     HomeType(typeImg: 'images/type9.png', typeName: '养车'),
     HomeType(typeImg: 'images/type10.png', typeName: '服务保障'),
   ];

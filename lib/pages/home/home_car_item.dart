@@ -26,7 +26,7 @@ class HomeCarItem extends StatelessWidget {
               children: <Widget>[
                 Image.asset(
                   car.img,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.cover,
                   width: (MediaQuery.of(context).size.width - 25) / 2,
                 ),
                 Positioned(
