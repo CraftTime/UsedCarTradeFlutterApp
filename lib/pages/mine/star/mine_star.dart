@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:used_car/model/mine_view_data.dart';
+import 'package:used_car/pages/home/car_detail.dart';
 import 'package:used_car/pages/mine/view/mine_view_item.dart';
 
 class MineStar extends StatefulWidget {
@@ -43,6 +44,8 @@ class _MineStarState extends State<MineStar> {
                   child: MineViewItem(
                       car: _carList[index]),
                   onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => CarDetail(),),);
                   });
             }
             return null;

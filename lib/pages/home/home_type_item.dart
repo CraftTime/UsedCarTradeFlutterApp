@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:used_car/model/home_page_model.dart';
 import 'package:used_car/model/home_type_data.dart';
-import 'package:used_car/pages/eva/eval_price.dart';
+import 'package:used_car/pages/eval/eval_price.dart';
 import 'package:used_car/widgets/web_view.dart';
 
 class HomeTypeItem extends StatelessWidget {

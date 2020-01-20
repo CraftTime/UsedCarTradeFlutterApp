@@ -3,6 +3,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:used_car/model/home_car_data.dart';
 import 'package:used_car/model/home_car_recommend_data.dart';
 import 'package:used_car/model/home_type_data.dart';
+import 'package:used_car/pages/home/car_detail.dart';
 import 'package:used_car/pages/home/home_car_brand_item.dart';
 import 'package:used_car/pages/home/home_car_favor_item.dart';
 import 'package:used_car/pages/home/home_car_item.dart';
@@ -70,6 +71,7 @@ class _HomeState extends State<Home> {
             slivers: <Widget>[
               SliverSafeArea(
                 top: false,
+                bottom: false,
                 sliver: SliverToBoxAdapter(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -197,10 +199,14 @@ class _HomeState extends State<Home> {
                             itemCount: _carList.length,
                             itemBuilder: (context, index) {
                               if (index < _carList.length) {
-                                return HomeFavorCarItem(
+                                return  GestureDetector(
+                                  behavior: HitTestBehavior.opaque, child: HomeFavorCarItem(
                                   car: _carList[index],
                                   isLast: index == _carList.length - 1,
-                                );
+                                ),onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) => CarDetail(),),);
+                                },);
                               }
                               return null;
                             }),
@@ -676,9 +682,14 @@ class _HomeState extends State<Home> {
                   mainAxisSpacing: 5.0,
                   childAspectRatio: 0.9,
                   children: _carList
-                      .map((item) => HomeCarItem(
-                            car: item,
-                          ))
+                      .map((item) =>
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque, child: HomeCarItem(
+                        car: item,
+                      ),onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => CarDetail(),),);
+                      },),)
                       .toList(),
                 ),
               ),

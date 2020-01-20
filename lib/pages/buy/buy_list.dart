@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:used_car/model/buy_car_data.dart';
 import 'package:used_car/pages/buy/buy_car_item.dart';
+import 'package:used_car/pages/home/car_detail.dart';
 
 class BuyList extends StatefulWidget {
   @override
@@ -395,9 +396,13 @@ class _BuyListState extends State<BuyList> {
                 SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
                     if (index < _carList.length) {
-                      return BuyCarItem(
+                      return  GestureDetector(
+                        behavior: HitTestBehavior.opaque, child: BuyCarItem(
                         car: _carList[index],
-                      );
+                      ),onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => CarDetail(),),);
+                      },);
                     }
                     return null;
                   }, childCount: _carList.length),

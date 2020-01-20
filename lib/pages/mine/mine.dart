@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:used_car/model/mine_recommend_car_data.dart';
+import 'package:used_car/pages/home/car_detail.dart';
 import 'package:used_car/pages/mine/mine_recommend_car_item.dart';
 import 'package:used_car/pages/mine/star/mine_star.dart';
 import 'package:used_car/pages/mine/view/mine_view_histroy.dart';
@@ -661,9 +662,13 @@ class _MineState extends State<Mine> {
                 SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
                     if (index < _carList.length) {
-                      return MineRecommendCarItem(
+                      return  GestureDetector(
+                        behavior: HitTestBehavior.opaque, child: MineRecommendCarItem(
                         car: _carList[index],
-                      );
+                      ),onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => CarDetail(),),);
+                      },);
                     }
                     return null;
                   }, childCount: _carList.length),

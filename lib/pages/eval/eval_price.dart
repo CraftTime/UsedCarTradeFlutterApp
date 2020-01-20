@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:used_car/pages/eval/eval_result.dart';
 
 class EvalPrice extends StatefulWidget {
   @override
@@ -76,7 +77,7 @@ class _EvalPriceState extends State<EvalPrice> {
                                       color: Color.fromRGBO(64, 68, 70, 1))),
                             ),
                             SizedBox(width: 8),
-                            Image.asset('images/icon_jump.png',width: 10,height: 10,fit: BoxFit.cover,),
+                            Image.asset('images/icon_jump.png',width: 10,height: 10,),
                           ],
                         ),
                       ),
@@ -112,7 +113,7 @@ class _EvalPriceState extends State<EvalPrice> {
                                       color: Color.fromRGBO(64, 68, 70, 1))),
                             ),
                             SizedBox(width: 8),
-                            Image.asset('images/icon_jump.png',width: 10,height: 10,fit: BoxFit.cover,),
+                            Image.asset('images/icon_jump.png',width: 10,height: 10,),
                           ],
                         ),
                       ),
@@ -148,7 +149,7 @@ class _EvalPriceState extends State<EvalPrice> {
                                       color: Color.fromRGBO(64, 68, 70, 1))),
                             ),
                             SizedBox(width: 8),
-                            Image.asset('images/icon_jump.png',width: 10,height: 10,fit: BoxFit.cover,),
+                            Image.asset('images/icon_jump.png',width: 10,height: 10,),
                           ],
                         ),
                       ),
@@ -184,7 +185,7 @@ class _EvalPriceState extends State<EvalPrice> {
                                       color: Color.fromRGBO(64, 68, 70, 1))),
                             ),
                             SizedBox(width: 8),
-                            Image.asset('images/icon_jump.png',width: 10,height: 10,fit: BoxFit.cover,),
+                            Image.asset('images/icon_jump.png',width: 10,height: 10,),
                           ],
                         ),
                       ),
@@ -220,7 +221,7 @@ class _EvalPriceState extends State<EvalPrice> {
                                       color: Color.fromRGBO(64, 68, 70, 1))),
                             ),
                             SizedBox(width: 8),
-                            Image.asset('images/icon_jump.png',width: 10,height: 10,fit: BoxFit.cover,),
+                            Image.asset('images/icon_jump.png',width: 10,height: 10,),
                           ],
                         ),
                       ),
@@ -239,7 +240,9 @@ class _EvalPriceState extends State<EvalPrice> {
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                   child: MaterialButton(
                     color: Color.fromRGBO(0, 166, 20, 1),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>EvalResult()));
+                    },
                     textColor: Colors.white,
                     child: Text("提交"),
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),

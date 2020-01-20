@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:used_car/model/sell_car_brand_data.dart';
 import 'package:used_car/model/sell_car_data.dart';
+import 'package:used_car/pages/eval/eval_price.dart';
+import 'package:used_car/pages/home/car_detail.dart';
+import 'package:used_car/pages/sell/eval_sell.dart';
 import 'package:used_car/pages/sell/sell_car_brand_item.dart';
 import 'package:used_car/pages/sell/sell_car_item.dart';
 
@@ -52,6 +55,7 @@ class _SellState extends State<Sell> {
             slivers: <Widget>[
               SliverSafeArea(
                 top: false,
+                bottom: false,
                 sliver: SliverToBoxAdapter(
                   child: Stack(
                     children: <Widget>[
@@ -74,6 +78,8 @@ class _SellState extends State<Sell> {
                           children: <Widget>[
                             Text(
                               '高价卖车 省心无忧\n当天立拿车款',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontSize: 25,
                                 letterSpacing: 2,
@@ -89,6 +95,8 @@ class _SellState extends State<Sell> {
                               children: <Widget>[
                                 Text(
                                   '一键预约',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 12,
                                     letterSpacing: 2,
@@ -97,6 +105,8 @@ class _SellState extends State<Sell> {
                                 ),
                                 Text(
                                   '免费检测',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 12,
                                     letterSpacing: 2,
@@ -105,6 +115,8 @@ class _SellState extends State<Sell> {
                                 ),
                                 Text(
                                   '当天上架',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 12,
                                     letterSpacing: 2,
@@ -113,6 +125,8 @@ class _SellState extends State<Sell> {
                                 ),
                                 Text(
                                   '签约过户',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 12,
                                     letterSpacing: 2,
@@ -302,7 +316,14 @@ class _SellState extends State<Sell> {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(3),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  EvalSell(),
+                                            ));
+                                      },
                                       elevation: 1,
                                     ),
                                     flex: 2,
@@ -327,7 +348,14 @@ class _SellState extends State<Sell> {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(3),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  EvalPrice(),
+                                            ));
+                                      },
                                       elevation: 1,
                                     ),
                                     flex: 1,
@@ -499,9 +527,13 @@ class _SellState extends State<Sell> {
                 sliver: SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
                     if (index < _carList.length) {
-                      return SellCarItem(
+                      return  GestureDetector(
+                        behavior: HitTestBehavior.opaque, child: SellCarItem(
                         car: _carList[index],
-                      );
+                      ),onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => CarDetail(),),);
+                      },);
                     }
                     return null;
                   }, childCount: _carList.length),
