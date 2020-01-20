@@ -47,7 +47,7 @@ class CarValueItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      '估值范围',
+                      '估值范围（万元）',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
