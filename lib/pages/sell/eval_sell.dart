@@ -241,7 +241,7 @@ class _EvalSellState extends State<EvalSell> {
                           ),
                         ),
                         Text(
-                          '附件门店',
+                          '附近门店',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
